@@ -3,16 +3,25 @@
 <head>
     <meta charset="UTF-8" />
     <title>NoteTaker</title>
+    <link rel="stylesheet" href="index.css">
+    <style>
+      input[name="text"] {
+        height:700px;
+        width: 300px;
+      }
+    </style>
 </head>
 <body>
     <div class="title">
     </div>
     <form action="/save" method="POST">
+    <input type="submit" value="Save">
+    <input type="reset" value="Clear">
     <label for="title"></label>
     <input type="text" name="title" required>
     <label for="text"></label>
     <input type="text" name="text" required>
-    <input type="submit" value="Save">
+    
   </form>
 </body>
 </html>
