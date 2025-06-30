@@ -1,11 +1,18 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Note Taking App</title>
+    <meta charset="UTF-8" />
+    <title>NoteTaker</title>
 </head>
 <body>
-    
+    <div class="title">
+    </div>
+    <form action="/save" method="POST">
+    <label for="title"></label>
+    <input type="text" name="title" required>
+    <label for="text"></label>
+    <input type="text" name="text" required>
+    <input type="submit" value="Save">
+  </form>
 </body>
 </html>
