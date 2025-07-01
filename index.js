@@ -1,5 +1,7 @@
+
 document.addEventListener('DOMContentLoaded', function() {
     const saveBtn = document.querySelector('.save-btn');
+    const deletebtn = document.querySelector('.delete-btn');
     const textarea = document.querySelector('textarea');
     const notesContainer = document.getElementById('notes');
     
@@ -10,6 +12,11 @@ document.addEventListener('DOMContentLoaded', function() {
             textarea.value = '';
         }
     });
+
+    deletebtn.addEventListener('click', function() {
+        const allNotes = document.querySelectorAll('.note');
+        allNotes.forEach(note => note.remove());
+});
     
     function addNote(text) {
         const noteElement = document.createElement('div');
@@ -17,6 +24,9 @@ document.addEventListener('DOMContentLoaded', function() {
         noteElement.innerHTML = `
             <p>${text}</p>
             <button class="delete-btn"><i class="fas fa-trash"></i></button>
+            <button class="edit-btn"> Edit </button>
+            <button class="save-btn">Save</button>
+
         `;
         notesContainer.prepend(noteElement);
         
@@ -24,5 +34,18 @@ document.addEventListener('DOMContentLoaded', function() {
         noteElement.querySelector('.delete-btn').addEventListener('click', function() {
             noteElement.remove();
         });
+
+        noteElement.querySelector('.edit-btn').addEventListener('click', function() {
+            const noteText = noteElement.querySelector('p');
+            noteText.contentEditable = "true";
+            noteText.focus();
+        });
+        saveBtn.addEventListener('click', function() {
+        noteText.contentEditable = "false";
+        saveBtn.style.display = "none";
+        editBtn.style.display = "inline-block";
+    });
     }
+
+
 });
