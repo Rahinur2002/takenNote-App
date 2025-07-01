@@ -1,6 +1,100 @@
-input[name="text"] {
-     height:200px;
+:root {
+    --pink: #ff9bb3;
+    --dark-pink: #ff6b9d;
+    --light-pink: #ffe6ec;
+    --purple: #d9a5ff;
+    --white: #fff9fb;
 }
-body{
-     background-color: rebeccapurple;
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--light-pink);
+    background-image: radial-gradient(var(--pink) 1px, transparent 1px);
+    background-size: 20px 20px;
+    color: #5a3d5c;
+    margin: 0;
+    padding: 20px;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: var(--white);
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(255, 107, 157, 0.2);
+}
+
+header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.subtitle {
+    color: var(--purple);
+    font-weight: 300;
+    margin-top: 5px;
+}
+
+.note-area {
+    margin-bottom: 30px;
+    display: flex;
+}
+
+textarea {
+    width: 100%;
+    height: 150px;
+    padding: 15px;
+    border: 2px dashed var(--pink);
+    border-radius: 15px;
+    resize: none;
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--white);
+    margin-bottom: 15px;
+}
+
+
+textarea:focus {
+    outline: none;
+    border: 2px solid var(--dark-pink);
+}
+
+button {
+    background-color: var(--dark-pink);
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 50px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin: 0 auto;
+}
+
+ button:hover {
+    background-color: var(--purple);
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(255, 107, 157, 0.4);
+}
+
+.notes-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 20px;
+}
+
+.note {
+    background-color: white;
+    padding: 15px;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    position: relative;
+    border-left: 5px solid var(--pink);
+}
+
+footer {
+    text-align: center;
+    margin-top: 40px;
+    color: var(--dark-pink);
+    font-size: 0.9rem;
 }
