@@ -17,6 +17,9 @@ document.addEventListener('DOMContentLoaded', function() {
         noteElement.innerHTML = `
             <p>${text}</p>
             <button class="delete-btn"><i class="fas fa-trash"></i></button>
+            <button class="edit-btn"> Edit </button>
+            <button class="save-btn">Save</button>
+
         `;
         notesContainer.prepend(noteElement);
         
@@ -24,5 +27,18 @@ document.addEventListener('DOMContentLoaded', function() {
         noteElement.querySelector('.delete-btn').addEventListener('click', function() {
             noteElement.remove();
         });
+
+        noteElement.querySelector('.edit-btn').addEventListener('click', function() {
+            const noteText = noteElement.querySelector('p');
+            noteText.contentEditable = "true";
+            noteText.focus();
+        });
+        saveBtn.addEventListener('click', function() {
+        noteText.contentEditable = "false";
+        saveBtn.style.display = "none";
+        editBtn.style.display = "inline-block";
+    });
     }
+
+
 });
