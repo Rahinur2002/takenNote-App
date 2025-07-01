@@ -1,5 +1,7 @@
+
 document.addEventListener('DOMContentLoaded', function() {
     const saveBtn = document.querySelector('.save-btn');
+    const deletebtn = document.querySelector('.delete-btn');
     const textarea = document.querySelector('textarea');
     const notesContainer = document.getElementById('notes');
     
@@ -10,6 +12,11 @@ document.addEventListener('DOMContentLoaded', function() {
             textarea.value = '';
         }
     });
+
+    deletebtn.addEventListener('click', function() {
+        const allNotes = document.querySelectorAll('.note');
+        allNotes.forEach(note => note.remove());
+});
     
     function addNote(text) {
         const noteElement = document.createElement('div');
