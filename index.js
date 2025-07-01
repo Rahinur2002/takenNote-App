@@ -4,12 +4,15 @@ document.addEventListener('DOMContentLoaded', function() {
     const deletebtn = document.querySelector('.delete-btn');
     const textarea = document.querySelector('textarea');
     const notesContainer = document.getElementById('notes');
+    const titleInput = document.querySelector(".note-title-input");
     
     saveBtn.addEventListener('click', function() {
+        const noteTitle = titleInput.value.trim();
         const noteText = textarea.value.trim();
         if (noteText) {
-            addNote(noteText);
+            addNote(noteTitle, noteText);
             textarea.value = '';
+            titleInput.value = '';
         }
     });
 
@@ -18,10 +21,11 @@ document.addEventListener('DOMContentLoaded', function() {
         allNotes.forEach(note => note.remove());
 });
     
-    function addNote(text) {
+    function addNote(title, text) {
         const noteElement = document.createElement('div');
         noteElement.className = 'note';
         noteElement.innerHTML = `
+        <h1>${title ? title : `untitled`}</h3>
             <p>${text}</p>
             <button class="delete-btn"><i class="fas fa-trash"></i></button>
             <button class="edit-btn"> Edit </button>
