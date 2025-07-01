@@ -6,6 +6,14 @@
     --white: #fff9fb;
 }
 
+h1 {
+    font-family: 'Dancing Script', cursive;
+    color: var(--dark-pink);
+    font-size: 3rem;
+    margin: 0;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+}
+
 body {
     font-family: 'Poppins', sans-serif;
     background-color: var(--light-pink);
